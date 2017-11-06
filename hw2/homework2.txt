@@ -1,0 +1,7 @@
+﻿word = input("Напишите слово:")
+
+one = str (word [0:int(len(word)/2)])
+
+two = str (word [-1:int(len(word)/2)-1:-1])
+
+print (one+two)
