@@ -1,0 +1,11 @@
+with open ("hwtext.txt", encoding="utf-8") as bu:
+    text = bu.read()
+    splited = text.split()
+    a = 0
+    b = 0
+    for word in text.split():
+        if len(word)>0:
+            a = a+1
+        if len(word)>10:
+            b = b+1  
+    print (b*100/a)
