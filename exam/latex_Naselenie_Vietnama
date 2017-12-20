@@ -1,0 +1,418 @@
+\documentclass[a4paper,14pt]{article}
+
+
+%\bibliographystyle{apalike}
+%\bibliography{bibliography.bib}
+
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{0em}{2.1em}}
+\renewcommand{\l@subsection}{\@dottedtocline{1}{0em}{2.1em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{1}{0em}{0em}}
+\makeatother
+
+%%% Работа с русским языком
+\usepackage[english,russian]{babel}   %% загружает пакет многоязыковой вёрстки
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman} %% задаёт основной шрифт документа
+\setsansfont{Comic Sans MS}                    %% задаёт шрифт без засечек
+\setmonofont{Courier New}
+\usepackage{indentfirst}
+\frenchspacing
+
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+
+\renewcommand\large{\@setfontsize\large{15.5}{17}}
+
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+
+
+
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+\usepackage{color,colortbl}
+\definecolor{faded}{gray}{0.7}
+
+
+%%% Теоремы
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}[theorem]{Утверждение}
+ 
+\theoremstyle{definition} % "Определение"
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{problem}{Задача}[section]
+ 
+\theoremstyle{remark} % "Примечание"
+\newtheorem*{nonum}{Решение}
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+
+%%% Страница
+\usepackage[14pt]{extsizes} % Возможность сделать 14-й шрифт
+\usepackage{geometry} % Простой способ задавать поля
+	\geometry{top=30mm}
+	\geometry{bottom=40mm}
+	\geometry{left=30mm}
+	\geometry{right=20mm}
+ %
+%\usepackage{fancyhdr} % Колонтитулы
+ %	\pagestyle{fancy}
+ %	\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+ %	\lfoot{Нижний левый}
+ %	\rfoot{Нижний правый}
+ %	\rhead{Верхний правый}
+ %	\chead{Верхний в центре}
+ %	\lhead{Верхний левый}
+%	\cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+
+\usepackage{setspace} % Интерлиньяж
+\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soul} % Модификаторы начертания
+
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+%    pdftitle={Заголовок},   % Заголовок
+ %   pdfauthor={Автор},      % Автор
+  %  pdfsubject={Тема},      % Тема
+   % pdfcreator={Создатель}, % Создатель
+ %   pdfproducer={Производитель}, % Производитель
+    pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+    colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+    linkcolor=black,          % внутренние ссылки
+    citecolor=black,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=blue           % на URL
+}
+
+\usepackage{csquotes} % Еще инструменты для ссылок
+
+
+\usepackage[style=authoryear,maxcitenames=7,backend=biber,sorting=nty]{biblatex}
+\addbibresource{bibliography.bib}
+
+%\usepackage{apacite}
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+
+\title{Население Вьетнама}
+\begin{document} 
+
+
+\section*{Население Вьетнама}
+Население Вьетнама — статистические \href{https://ru.m.wikipedia.org/wiki/Демография}{демографические} данные о \href{https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5}{населении}
+\href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC}{Вьетнама},
+включая \href{https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F}{плотность населения}, 
+\href{https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D1%8B_%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D0%B0}{национальный состав},
+уровень образования и здоровья, экономический статус, религиозные воззрения и подобные данные. 
+
+
+\href{https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BB%D0%B0%D0%BD%D0%B3}{Первые вьетнамцы} 
+появились между современным \href{https://ru.wikipedia.org/wiki/%D0%93%D1%83%D0%B0%D0%BD%D1%87%D0%B6%D0%BE%D1%83}{Гуанчжоу}
+и долиной \href{https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BD%D0%B3%D1%85%D0%B0}{реки Хонгха}. 
+\href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D1%8B}{Вьеты}
+ (кинь) — титульный народ современного \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC}{Вьетнама},
+ они говорят на \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA}{вьетнамском языке},
+ ставшем государственным, и оказывают основное влияние на культурную и политическую картину в стране.
+
+Последняя перепись была проведена в 2009 году. Согласно ей, в стране живёт 85 846 997 человек, из них 43 433 854 женщины (50,59 \%) и 42 413 143 мужчины (49,41 \%); городское население составляет 25 436 896 человек (29,63 \%), сельское — 60 410 101 (70,37 \%).
+
+\tableofcontents
+\section{Население} 
+%\addcontentsline{toc}{section}{Население}
+
+\subsection{ООН} 
+%\addcontentsline{toc}{subsection}{ООН}
+
+Данные ООН на 2010 год [\ref{1quote}].
+
+\begin{table}[!h]
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+	\begin{center}
+%		\caption[Заголовок для списка таблиц]{Бессмысленная таблица, зато с кучей фишек.}\label{tab:mytab}
+		\begin{tabular}{|c|c|c|c|c|}
+        \rowcolor{Gray}
+  		\hline
+             &           & В       & В         & \\
+       \rowcolor{Gray}
+           	 & Всего     &  возрасте & возрасте  & Старше  \\
+         \rowcolor{Gray}
+              & население & 0-14 лет, & 15-64 лет,& 65 лет, \\
+         \rowcolor{Gray}
+              &           &  проценты & проценты  & проценты \\
+         \hline
+        1950 &	28 264 &	31,9 &	63,9  & 4,2 \\ \hline
+  	   	1955 &	31 329 &	35,6 &	60,1 &	4,3 \\ \hline
+        1960 &	35 173 &	40,1 &	55,5 &	4,4 \\ \hline
+        1965 &	39 885 &	44,1 &	51,3 &	4,6 \\ \hline
+        1970 &	44 928 &	44,2 &	50,9 &	4,8 \\ \hline
+        1975 &	49 896 &	42,9 &	52,3 &	4,8 \\ \hline
+        1980 &	54 023 &	40,7 &	54,3 &	4,9 \\ \hline
+        1985 &	60 307 &	39,4 &	55,7 &	4,9 \\ \hline
+        1990 &	67 102 &	38,0 &	57,0 &	5,0 \\ \hline
+        1995 &	74 008 &	36,5 &	58,4 &	5,1 \\ \hline
+        2000 &	78 758 &	32,1 &	62,3 &	5,6 \\ \hline
+        2005 &	83 161 &	27,3 &	66,8 &	5,9 \\ \hline
+        2010 &	87 100 &	23,8 &	69,4 &	6,8 \\ \hline
+		\end{tabular}
+	\end{center}
+	%\caption{Заголовок мог быть и здесь}
+\end{table}
+
+\section{Данные по рождаемости и смертности}\label{Earth} 
+%\addcontentsline{toc}{section}{Данные по рождаемости и смертности}
+
+1 ноября 2013 родился 90-миллионный гражданин страны — событие было отмечено музыкальным фестивалем.
+
+\subsection{ООН} 
+%\addcontentsline{toc}{subsubsection}{ООН}
+
+\begin{table}[!h]
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+	\begin{center}
+%		\caption[Заголовок для списка таблиц]{Бессмысленная таблица, зато с кучей фишек.}\label{tab:mytab}
+		\begin{tabular}{|c|c|c|c|}
+        \rowcolor{Gray}
+  		\hline
+        \rowcolor{Gray}
+         Период &  Рожденных за год   & Умерших за год & Сальдо  \\ \hline
+         1950-1955 &	1 335 000 &	722 000 &	613 000  \\ \hline
+         1955-1960 &	1 533 000 &	764 000	&   769 000  \\ \hline
+         1960-1965 &	1 732 000 &	790 000 &	942 000  \\ \hline
+         1965-1970 &	1 798 000 &	790 000	&   1 009 000 \\ \hline
+         1970-1975 &	1 853 000 &	859 000	&   994 000  \\ \hline
+         1975-1980 &	1 797 000 &	760 000 &	1 036 000  \\ \hline
+         1980-1985 &	1 952 000 &	630 000 &	1 322 000  \\ \hline
+         1985-1990 &	2 000 000 &	574 000 &	1 425 000  \\ \hline
+         1990-1995 &	1 929 000 &	484 000 &	1 444 000  \\ \hline
+         1995-2000 &	1 448 000 &	441 000 &	1 007 000  \\ \hline
+         2000-2005 &	1 392 000 &	425 000 &	967 000  \\ \hline
+         2005-2010 &	1 472 000 &	448 000 &	1 024 000  \\ \hline
+    \end{tabular}
+	\end{center}
+	%\caption{Заголовок мог быть и здесь}
+\end{table}
+
+
+\subsection{Рождаемость, смертность и плодовитость} \label{artificial}
+%\addcontentsline{toc}{subsection}{Рождаемость, смертность и плодовитость}
+
+Данные на 2011 год — предварительные.
+\begin{table}[!h]
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+	\begin{center}
+%		\caption[Заголовок для списка таблиц]{Бессмысленная таблица, зато с кучей фишек.}\label{tab:mytab}
+		\begin{tabular}{|c|c|c|c|c|}
+        \rowcolor{Gray}
+  		\hline
+        & Общий  & Общий &   & Общий \\ 
+        \rowcolor{Gray}
+        & коэффициэнт & коэффициэнт & Естественный & коэффициэнт \\
+        \rowcolor{Gray}
+        & рождаемости & смертности & прирост & плодовитости \\ \hline
+        2001 &	18,6 &	5,1 &	13,5 &	2,25\\ \hline
+        2002 &	19,0 &	5,8 &	13,2 &	2,28\\ \hline
+        2003 &	17,5 &	5,8 &	11,7 &	2,12\\ \hline
+        2004 &	19,2 &	5,4 &	13,8 &	2,23\\ \hline
+        2005 &	18,6 &	5,3 &	13,3 &	2,11\\ \hline
+        2006 &	17,4 &	5,3 &	12,1 &	2,09\\ \hline
+        2007 &	16,9 &	5,3 &	11,6 &	2,07\\ \hline
+        2008 &	16,7 &	5,3 &	11,4 &	2,08\\ \hline
+        2009 &	17,6 &	6,8 &	10,8 &	2,03\\ \hline
+        2010 &	17,1 &	6,8 &	10,3 &	2,00\\ \hline
+        2011 &	16,6 &	6,9 м	9,7  & 1,99\\ \hline
+         \end{tabular}
+	\end{center}
+	%\caption{Заголовок мог быть и здесь}
+\end{table}
+
+Численность населения, согласно ЦРУ[\ref{6}].
+\begin{itemize}
+\item 1950	28264000
+\item 1960	35173000
+\item 1970	44928000
+\item 1980	54023000
+\item 1990	67102000
+\item 2000	78758000
+\item 2010	87100000
+\end{itemize}
+
+
+\section{Народы} \label{culture}
+%\addcontentsline{toc}{section}{Народы}
+\textit{Основная статья}:\href{https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D1%8B_%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D0%B0}{Народы Вьетнама}
+
+\begin{wrapfigure}[11]{r}{0.5\linewidth}
+\center{\includegraphics {thyong.jpg} \\ Тхыонги (начало ХХ века)}
+%\caption{Тхыонги (начало XX века)}
+\label{thyong}
+\end{wrapfigure}
+
+
+
+
+
+
+Вьетнамское правительство признаёт 54 народности, из которых крупнейшей является кинь (вьеты), составляющая 86 \% населения. Вьеты населяют менее половины территории страны, однако это самые плодородные земли Вьетнама. Вьеты составляют большинство населения во всех провинциях Вьетнама, кроме \href{https://ru.wikipedia.org/wiki/%D0%94%D1%8C%D0%B5%D0%BD%D0%B1%D1%8C%D0%B5%D0%BD}{Дьенбьен},
+\href{https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B9%D1%82%D1%8F%D1%83_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Лайтяу},
+\href{https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BE%D0%BA%D0%B0%D0%B9_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Лаокай},
+\href{https://ru.wikipedia.org/wiki/%D0%99%D0%B5%D0%BD%D0%B1%D0%B0%D0%B9_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Йенбай}, 
+\href{https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%B7%D1%8F%D0%BD%D0%B3_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Хазянг}, 
+\href{https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%B5%D0%BD%D0%BA%D1%83%D0%B0%D0%BD%D0%B3_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Туенкуанг},
+\href{https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BE%D0%B1%D0%B0%D0%BD%D0%B3_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Каобанг},
+\href{https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B3%D1%88%D0%BE%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Лангшон}, 
+\href{https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D0%BA%D0%B0%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Баккан}, 
+\href{https://ru.wikipedia.org/wiki/%D0%A8%D0%BE%D0%BD%D0%BB%D0%B0_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Шонла},
+\href{https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B0%D0%B1%D0%B8%D0%BD%D1%8C_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Хоабинь}
+и \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D1%83%D0%BC_(%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F)}{Контум}.
+
+На юге страны проживают \href{https://ru.wikipedia.org/wiki/%D0%9A%D1%85%D0%BC%D0%B5%D1%80-%D0%BA%D1%80%D0%BE%D0%BC}{кхмер-кром},
+населяющие дельту \href{https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BA%D0%BE%D0%BD%D0%B3}{Меконга}.
+В некоторых регионах они составляют большинство сельского населения. Кхмеры живут в этих местах с того времени, когда эти места были частью Камбоджи. Имеются сведения о том, что кхмеры подвергаются дискриминации и насильной вьетнамизации [\ref{8quote}] [\ref{9quote}]. Официально во Вьетнаме живёт 1,3 миллиона кхмеров, однако имеются данные о том, что на самом деле их до 7 000 000.
+
+Во Вьетнаме также живёт около миллиона китайцев, хотя отношения правительств двух стран охладели в \href{https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE-%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D1%81%D0%BA%D0%BE%D0%BB}{Советско-китайский раскол} 
+и накалились во время \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%BF%D1%83%D1%87%D0%B8%D0%B9%D1%81%D0%BA%D0%BE-%D0%B2%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BD%D1%84%D0%BB%D0%B8%D0%BA%D1%82}{войны с режимом Пол Пота},
+вызвавшей \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%BE-%D0%B2%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0}{войну с Китаем}.
+
+Центральные равнины населены народами, известными как \href{https://ru.wikipedia.org/wiki/%D0%A2%D1%85%D1%8B%D0%BE%D0%BD%D0%B3%D0%B8}{дегары (монтаньяры) или тхыонги}, 
+это около 30 народностей малайско-полинезийского и мон-кхмерского происхождения.
+
+Другие крупные меньшинства — \href{https://ru.wikipedia.org/wiki/%D0%A2%D1%8F%D0%BC%D1%8B}{тямы},
+населявшие сильную когда-то империю \href{https://ru.wikipedia.org/wiki/%D0%A2%D1%8F%D0%BC%D0%BF%D0%B0}{Тямпа},
+\href{https://ru.wikipedia.org/wiki/%D0%A5%D0%BC%D0%BE%D0%BD%D0%B3%D0%B8}{хмонги}
+и тайские народы, \href{https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B8}{таи}.
+
+\section{Язык} \label{culture}
+
+Государственным языком страны является вьетнамский — на нём говорят 65,8 миллионов жителей страны.
+
+\section{Религия} \label{culture}
+%\addcontentsline{toc}{section}{Религия}
+
+\textit{Основная статья}: \href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F_%D0%B2%D0%BE_%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D0%B5}{Религия во Вьетнаме}
+
+Согласно некоторым данным, основной религией страны является буддизм, который исповедуют 85 \% населения. За ним идёт христианство с 8 \%.
+
+
+\begin{itemize}
+
+\item[\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%B4%D0%B4%D0%B8%D0%B7%D0%BC}{Буддизм}, 85 \%;
+      \begin{itemize}
+      \item[\textcolor{blue}{\textbullet}]  \href{https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B5%D0%B8%D0%B7%D0%BC}{атеизм}
+/ \href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F_%D0%B2%D0%BE_%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D0%B5}{смесь религий},
+80 \%;
+      \item[\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B0%D1%85%D0%B0%D0%BE}{хоа-хао}, 
+      3 \%;
+      \item [\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%A2%D1%85%D0%B5%D1%80%D0%B0%D0%B2%D0%B0%D0%B4%D0%B0}{тхеравада}, 
+      2 \%
+      \end{itemize}
+\item [\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE}{христианство}, 
+8 \%;
+     \begin{itemize}
+     \item [\textcolor{blue}{\textbullet}]\href{https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D1%86%D0%B8%D0%B7%D0%BC}{католицизм},
+     7 \%;
+    \item [\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%B7%D0%BC}{протестантизм}, 
+    1 \%;
+    \end{itemize}
+\item [\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BE%D0%B4%D0%B0%D0%B9}{каодай}, 
+3 \%;
+\item [\textcolor{blue}{\textbullet}] прочие, 4 \%.
+\end{itemize}
+Другие же данные свидетельствуют о том, что более 80 \% населения считают себя атеистами[\ref{18}]. С этой точки зрения Вьетнам является одной из наименее религиозных стран мира.
+
+\begin{itemize}
+\item [\textcolor{blue}{\textbullet}] \href{https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B5%D0%B8%D0%B7%D0%BC}{Атеизм}, 
+80,8 \%;
+\item [\textcolor{blue}{\textbullet}] буддизм, 9,3 \%;
+\item [\textcolor{blue}{\textbullet}] христианство, 7,2 \%;
+    \begin{itemize}
+    \item [\textcolor{blue}{\textbullet}] католицизм, 6,7 \%;
+    \item [\textcolor{blue}{\textbullet}] протестантизм, 0,5 \%;
+    \end{itemize}
+\item [\textcolor{blue}{\textbullet}] хоа-хао, 1,5 \%;
+\item [\textcolor{blue}{\textbullet}] каодай, 1,1 \%.
+\end{itemize}
+
+\section{Данные Всемирной книги фактов ЦРУ} \label{culture}
+%\addcontentsline{toc}{section}{Данные Всемирной книги фактов ЦРУ}
+
+Нижеприведённые данные взяты из \href{https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0_%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D0%B2_%D0%A6%D0%A0%D0%A3}{Всемирной книги фактов ЦРУ.}
+
+Рождается 1,07 мальчиков на одну девочку. К возрасту 15 лет на 1,08 мальчиков приходится одна девочка. До 64 лет соотношение — 0,98 к 1, после 65 лет — 0,63 к 1. В совокупности на 1 женщину приходится 0,98 мужчин.
+
+Ожидаемая продолжительность жизни — 71,33 года (68,52 для мужчин и 74,33 для женщин).
+
+94 \% граждан Вьетнама старше 14 лет грамотны (96,9 \% мужчин и 91,9 \% женщин).
+
+\section{Эмиграция и экспатриация} \label{culture}
+%\addcontentsline{toc}{section}{Эмиграция и экспатриация}
+
+\textit{Основная статья}: \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B8%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D0%B0}{Вьетнамская диаспора}
+
+Коэффициент миграции населения Вьетнама на 2011 год составил −0.4 мигрантов на 1000 человек. На 2011 год, население вьетнамской диаспоры в 102 государствах и территориях составляло более 3,5 миллионов человек. По данным на 2012 год — уже более 4 млн человек в 103 государствах и территориях. Основную часть вьетнамской \href{https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D0%B0}{диаспоры} 
+составляют \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BA%D1%8C%D0%B5%D1%83}{вьеткьеу}
+— этнические \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D1%8B}{вьеты}, 
+проживающие вне границ \href{https://ru.wikipedia.org/wiki/%D0%92%D1%8C%D0%B5%D1%82%D0%BD%D0%B0%D0%BC}{Вьетнама}.
+
+\section{Примечания}
+ 
+%\printbibliography
+%\addcontentsline{toc}{section}{Литература} 
+\begin{enumerate}
+\item \href{https://esa.un.org/unpd/wpp/}{ Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat, World Population Prospects: The 2010 Revision}\label{1quote}
+\item \href{https://www.cia.gov/library/publications/the-world-factbook/geos/cb.html}{ CIA - The World Factbook}\label{6}
+\item \href{http://www.rcusa.org/home}{ Human Rights Watch: «On the Margins: Rights and Abuses of Ethnic Khmer in Vietnam’s Mekong Delta»}\label{8quote}
+\item \href{https://khmerkrom.orgnode/25}{Khmers Kampuchea-Krom Federation: «Rearhoo: The Dark Ages»}\label{9quote}
+\item \href{https://www.cia.gov/library/publications/the-world-factbook/geos/vm.html}{CIA-The World Factbook-Vietnam}\label{18}
+\end{enumerate}
+
+\nocite{Alex}
+
+
+\section{Литература}
+\renewcommand{\refname}{Литература}
+\printbibliography
+\nocite{Data}
+\nocite{1999}
+\nocite{Atlas}
+\end{document}
