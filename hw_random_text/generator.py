@@ -1,7 +1,7 @@
 import random
 
 def verb(number):
-    with open("verbSg.txt") as vs:
+    with open("verbSg.txt", encoding=('utf-8')) as vs:
      text = vs.read()  
      sing_verb = text.split()
     with open("verbPl.txt", encoding=('utf-8')) as vp:
@@ -15,7 +15,7 @@ def noun(number):
     with open("nounSg.txt", encoding=('utf-8')) as f:
      text = f.read()  
      singular_nouns = text.split()
-    with open("nounPl.txt") as np:
+    with open("nounPl.txt", encoding=('utf-8')) as np:
      text = np.read()  
      plural_nouns = text.split()  
     if number == 's':
@@ -23,7 +23,7 @@ def noun(number):
     return random.choice(plural_nouns)
 
 def adverb():
-    with open("adverbs.txt") as f:
+    with open("adverbs.txt", encoding=('utf-8')) as f:
      text = f.read()  
      adverbs1 = text.split()
      return random.choice(adverbs1)
