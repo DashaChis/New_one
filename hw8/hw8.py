@@ -8,18 +8,18 @@ def read_f():
     d = {word_s[i]:word_s[i+1] for i in range(0, len(word_s), 2)}
     return d
 
-
 def quest(d):
     attempt = 0
     keys = list(d.keys())
     quest = random.choice(keys)
-    print ('Угадай слово: ')
-    guess = input(quest+'... ')
+    print ('Угадай слово ')
+    guess = input('Попытка №1: '+quest+'... ')
     while guess !=d[quest]:
         attempt +=1
-        guess = input('Неверно. Попробуй еще раз: ')
+        print('Попытка №', attempt+1)
+        guess = input('Нет! '+quest+'... ')
     attempt +=1
-    print ('Правильно! Ты угадал слово с', attempt, 'попытки')   
+    print ('Правильно! Ты угадал слово с', attempt, 'попытки.')   
     
 def main():
     quest(read_f())
