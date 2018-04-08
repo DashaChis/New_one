@@ -6,7 +6,8 @@ def zavr():
     return words
 
 def change(words):
-    words = re.sub(r'\bДинозавр([ауеыо]?[мвх]?и?)\b', r'Кот\1', re.sub(r'\bдинозавр([иауео]?[хмв]?и?)\b', r'кот\1', zavr())) 
+    words = re.sub(r'\bДинозавр([ауеыо]?[мвх]?и?)\b', r'Кот\1', zavr())
+    words = re.sub(r'\bдинозавр([иауео]?[хмв]?и?)\b', r'кот\1', words)
     return words
 
 def write(words):
@@ -14,9 +15,8 @@ def write(words):
         f.write(words)
 
 def main():
-    write(change(zavr()))
-    print (change(zavr()))
-   
+    write(change(zavr()))   
 
 if __name__ == '__main__':
     main()
+    return words
