@@ -9,6 +9,8 @@ def first():
             word = re.findall('type="[^"]*">', line)
             word = str(word)
             word = re.sub('type[=">]*', '', word)
+            word = str(word)
+            word = re.sub('[">]*', '', word)
             l.append(word)
     n = len(l)
     for i in range (n):
