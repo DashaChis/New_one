@@ -8,7 +8,7 @@ def zavr():
 def change(words):
     words = re.sub(r'\bДинозавр([аыуе]?)\b', r'Кот\1', zavr())
     words = re.sub(r'\bдинозавр([ыауе]?)\b', r'кот\1', words)
-    words = re.sub(r'\bДинозавр(ах)\b', r'кот\1', words)
+    words = re.sub(r'\bДинозавр(ах)\b', r'Кот\1', words)
     words = re.sub(r'\bдинозавр(ах)\b', r'кот\1', words)
     words = re.sub(r'\bДинозавр(ов)\b', r'Кот\1', words)
     words = re.sub(r'\bдинозавр(ов)\b', r'кот\1', words)
